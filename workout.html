@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>فرم ثبت اطلاعات</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.rtl.css">
+
+    <link rel="stylesheet" href="./css/form-theme.css">
+
+    <link rel="stylesheet" href="./css/workout.css">
+
+</head>
+
+
+
+<body class="workout-page">
+
+
+
+    <main class="workout-wrapper">
+
+        <div class="row workout-layout g-4">
+
+
+
+            <div class="col-lg-8 workout-form-col">
+
+                <div class="card border shadow-sm">
+
+                    <div class="card-body p-4">
+
+
+
+                        <div class="avatar">
+
+                            <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2"
+
+                                viewBox="0 0 24 24">
+
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+
+                                <circle cx="12" cy="7" r="4" />
+
+                            </svg>
+
+                        </div>
+
+                        
+
+                        <div class="form-title">ثبت اطلاعات</div>
+
+                        <div class="form-subtitle">لطفاً فرم زیر را با دقت تکمیل کنید</div>
+
+
+
+                        <form id="userForm" novalidate>
+
+
+
+                            <div class="section-label">اطلاعات شخصی</div>
+
+
+
+                            <div class="row">
+
+                                <div class="col-6 mb-3">
+
+                                    <input type="text" class="form-control" id="firstName" name="firstName"
+
+                                        placeholder="نام" autocomplete="given-name">
+
+                                    <div class="invalid-feedback">نام باید حداقل ۲ حرف فارسی باشد.</div>
+
+                                </div>
+
+                                <div class="col-6 mb-3">
+
+                                    <input type="text" class="form-control" id="lastName" name="lastName"
+
+                                        placeholder="نام خانوادگی" autocomplete="family-name">
+
+                                    <div class="invalid-feedback">نام خانوادگی باید حداقل ۲ حرف فارسی باشد.</div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row">
+
+                                <div class="col-6 mb-3">
+
+                                    <input type="text" class="form-control" id="nationalCode" name="nationalCode"
+
+                                        placeholder="کد ملی" inputmode="numeric" maxlength="10">
+
+                                    <div class="invalid-feedback">کد ملی باید ۱۰ رقم معتبر باشد.</div>
+
+                                </div>
+
+                                <div class="col-6 mb-3">
+
+                                    <input type="text" class="form-control" id="phone" name="phone"
+
+                                        placeholder="شماره تماس" inputmode="tel" maxlength="11">
+
+                                    <div class="invalid-feedback">شماره تماس باید ۱۱ رقم و با ۰۹ شروع شود.</div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-divider"></div>
+
+                            <div class="section-label">آدرس</div>
+
+
+
+                            <div class="mb-3">
+
+                                <textarea class="form-control" id="address" name="address" rows="3"
+
+                                    placeholder="آدرس کامل"></textarea>
+
+                                <div class="invalid-feedback">آدرس باید حداقل ۱۰ کاراکتر باشد.</div>
+
+                            </div>
+
+
+
+                            <div class="row">
+
+                                <div class="col-sm-12 col-md-6 mb-3">
+
+                                    <select class="form-select" id="DRCapital" name="province">
+
+                                        <option value="">استان</option>
+
+                                    </select>
+
+                                    <div class="invalid-feedback">لطفاً استان را انتخاب کنید.</div>
+
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 mb-3">
+
+                                    <select class="form-select" id="DRCity" name="city">
+
+                                        <option value="">شهرستان</option>
+
+                                    </select>
+
+                                    <div class="invalid-feedback">لطفاً شهرستان را انتخاب کنید.</div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="aid-type-label">نوع حمایت درخواستی</div>
+
+                            <div class="row aid-type-group" id="aidTypeGroup">
+
+                                <div class="col-6 mb-3">
+
+                                    <label class="aid-type-card" for="aidFacility">
+
+                                        <input type="radio" name="aidType" id="aidFacility" value="facility">
+
+                                        <div class="aid-type-text">
+
+                                            <strong>تسهیلات</strong>
+
+                                            <span>دریافت وام با شرایط بازپرداخت</span>
+
+                                        </div>
+
+                                    </label>
+
+                                </div>
+
+                                <div class="col-6 mb-3">
+
+                                    <label class="aid-type-card" for="aidGrant">
+
+                                        <input type="radio" name="aidType" id="aidGrant" value="grant">
+
+                                        <div class="aid-type-text">
+
+                                            <strong>کمک بلاعوض</strong>
+
+                                            <span>دریافت کمک بدون نیاز به بازپرداخت</span>
+
+                                        </div>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="aid-type-error" id="aidTypeError">لطفاً نوع حمایت را انتخاب کنید.</div>
+
+
+
+                            <div class="confirm-box" id="confirmBox">
+
+                                <input type="checkbox" id="confirmInfo" name="confirmInfo">
+
+                                <label for="confirmInfo">اطلاعات وارد شده در فرم را تایید می‌کنم</label>
+
+                            </div>
+
+                            <div class="confirm-error" id="confirmFeedback">
+
+                                لطفاً تایید اطلاعات را علامت بزنید.
+
+                            </div>
+
+
+
+                            <button type="submit" class="btn-submit">ثبت اطلاعات</button>
+
+                            <button type="button" class="btn-back" id="backHomeBtn">بازگشت به صفحه اصلی</button>
+
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 workout-carousel-col">
+
+                <div class="aid-carousel" id="aidCarousel">
+
+                    <div class="aid-carousel-track" id="carouselTrack">
+
+                        <div class="aid-carousel-slide">
+
+                            <img src="./assets/carousel-aid-1.png" alt="توزیع لوازم ضروری خانگی">
+
+                            <div class="aid-carousel-caption">حمایت از هموطنان با تأمین لوازم ضروری</div>
+
+                        </div>
+
+                        <div class="aid-carousel-slide">
+
+                            <img src="./assets/carousel-aid-2.png" alt="کمک‌رسانی بنیاد برکت">
+
+                            <div class="aid-carousel-caption">همراهی بنیاد برکت در مسیر بازسازی</div>
+
+                        </div>
+
+                        <div class="aid-carousel-slide">
+
+                            <img src="./assets/carousel-aid-3.png" alt="کمک بلاعوض به آسیب‌دیدگان">
+
+                            <div class="aid-carousel-caption">توزیع بسته‌های حمایتی برای خانواده‌ها</div>
+
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="aid-carousel-btn prev" id="carouselPrev" aria-label="قبلی">‹</button>
+
+                    <button type="button" class="aid-carousel-btn next" id="carouselNext" aria-label="بعدی">›</button>
+
+                    <div class="aid-carousel-dots" id="carouselDots"></div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+
+
+    <script src="./workout.js"></script>
+
+</body>
+
+
+
+</html>
+
+

@@ -1,0 +1,231 @@
+body.workout-page {
+    align-items: stretch;
+    padding: 1.5rem 1rem;
+}
+
+.workout-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.workout-layout {
+    align-items: stretch;
+    min-height: calc(100vh - 3rem);
+}
+
+.workout-form-col .card {
+    height: 100%;
+}
+
+.workout-carousel-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.aid-carousel {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 32px rgba(0, 89, 36, 0.08);
+    background: var(--color-surface);
+    height: 100%;
+    min-height: 420px;
+}
+
+.aid-carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+    direction: ltr;
+}
+
+.aid-carousel-slide {
+    min-width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.aid-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.aid-carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.2rem 1.2rem;
+    background: linear-gradient(transparent, rgba(0, 89, 36, 0.85));
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.aid-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 89, 36);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.aid-carousel-btn:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.aid-carousel-btn.prev {
+    right: 12px;
+}
+
+.aid-carousel-btn.next {
+    left: 12px;
+}
+
+.aid-carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+}
+
+.aid-carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.aid-carousel-dot.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+.aid-type-label {
+    color: var(--color-text-soft);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.aid-type-group.is-invalid .aid-type-card {
+    border-color: rgba(192, 57, 43, 0.45);
+}
+
+.aid-type-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 12px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    height: 100%;
+    margin: 0;
+}
+
+.aid-type-card:hover {
+    border-color: rgba(0, 89, 36, 0.35);
+    background: var(--color-primary-light);
+}
+
+.aid-type-card:has(input:checked) {
+    border-color: rgb(0, 89, 36);
+    background: #e8f5ec;
+    box-shadow: 0 0 0 3px rgba(0, 89, 36, 0.1);
+}
+
+.aid-type-card input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: rgb(0, 89, 36);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.aid-type-text {
+    flex: 1;
+}
+
+.aid-type-text strong {
+    display: block;
+    color: rgb(0, 89, 36);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.aid-type-text span {
+    color: var(--color-text-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.aid-type-error {
+    display: none;
+    color: var(--color-error);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.aid-type-error.show {
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .workout-layout {
+        min-height: auto;
+    }
+
+    .workout-form-col {
+        order: 1;
+    }
+
+    .workout-carousel-col {
+        order: 2;
+        margin-bottom: 1.5rem;
+    }
+
+    .aid-carousel,
+    .aid-carousel-slide img {
+        min-height: 260px;
+    }
+}
+
+@media (min-width: 992px) {
+    .workout-carousel-col {
+        order: 2;
+    }
+
+    .workout-form-col {
+        order: 1;
+    }
+}

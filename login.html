@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به سامانه</title>
+    <link rel="stylesheet" href="./css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="./css/form-theme.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body class="login-page">
+
+    <main class="login-wrapper">
+        <div class="row login-layout g-4">
+
+            <div class="col-lg-5 login-form-col">
+                <div class="card border shadow-sm">
+                    <div class="card-body p-4">
+
+                        <div class="avatar">
+                            <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+
+                        <div class="form-title">ورود به سامانه بنیاد برکت</div>
+                        <div class="form-subtitle">برای ادامه، شماره تماس خود را وارد کنید</div>
+
+                        <div id="alertBox" class="alert-message error step-hidden"></div>
+
+                        <div id="phoneStep">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="loginPhone" placeholder="شماره تماس"
+                                    inputmode="tel" maxlength="11" autocomplete="tel">
+                                <div class="invalid-feedback">شماره تماس باید ۱۱ رقم و با ۰۹ شروع شود.</div>
+                            </div>
+                            <button type="button" class="btn-submit" id="sendOtpBtn">ارسال کد یکبار مصرف</button>
+                        </div>
+
+                        <div id="otpStep" class="step-hidden">
+                            <div class="form-subtitle mb-0">
+                                کد ارسال‌شده به
+                                <span class="phone-display" id="phoneDisplay"></span>
+                                را وارد کنید
+                            </div>
+
+                            <div class="otp-boxes" id="otpBoxes">
+                                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" data-index="0">
+                                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" data-index="1">
+                                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" data-index="2">
+                                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" data-index="3">
+                                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" data-index="4">
+                                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" data-index="5">
+                            </div>
+
+                            <button type="button" class="btn-submit" id="verifyOtpBtn">تایید و ورود</button>
+                            <button type="button" class="btn-link" id="resendBtn" disabled>ارسال مجدد (<span id="timer">120</span>)</button>
+                            <button type="button" class="btn-link" id="changePhoneBtn">تغییر شماره تماس</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 login-info">
+                <img src="./assets/carousel-aid-1.png" alt="حمایت بنیاد برکت از هموطنان" class="img-fluid rounded-3">
+
+                <span class="login-info-badge my-3 d-block text-center">بنیاد برکت ستاد اجرایی فرمان حضرت امام (ره)</span>
+
+                <h1 class="login-info-title">سامانه ثبت‌نام و دریافت کمک هزینه</h1>
+
+                <p class="login-info-text">
+                    بنیاد برکت ستاد اجرایی فرمان حضرت امام (ره) در راستای حمایت از هموطنان آسیب‌دیده در جنگ
+                    رمضان اقدام به تخصیص کمک هزینه تأمین بخشی از لوازم ضروری خانگی آسیب‌دیده از جنگ تحمیلی
+                    سوم نموده است. جهت اطلاع و تکمیل فرآیند وارد سامانه شوید.
+                </p>
+
+                <div class="login-info-note">
+                    مبلغ اختصاص یافته صرفاً به عنوان کمک فوری از طرف این بنیاد برای شما هموطن گرامی در نظر
+                    گرفته شده است؛ چنانچه توسط دولت برای جبران خسارت اقدامی صورت پذیرد، مجزا و علاوه بر این
+                    طرح می‌باشد.
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="./config.js"></script>
+    <script src="./login.js"></script>
+</body>
+
+</html>
